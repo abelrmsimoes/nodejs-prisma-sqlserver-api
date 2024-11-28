@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Clientes {
+  ID    Int    @id(map: "PK__Clientes__3214EC2750D233DC") @default(autoincrement())
+  Nome  String @db.VarChar(150)
+  Idade Int
+  UF    String @db.Char(2)
+}
